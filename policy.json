@@ -1,0 +1,28 @@
+{
+  "commands": {
+    "allow": [
+      "python3 -m unittest -v",
+      "python3 -m unittest test_order.py -v"
+    ],
+    "deny": [
+      "rm -rf ."
+    ]
+  },
+  "directories": {
+    "allow": ["."],
+    "deny": ["private", ".git"]
+  },
+  "protected_files": ["test_order.py"],
+  "generated": ["__pycache__", "*.pyc"],
+  "bash": {
+    "timeout_seconds": 30,
+    "max_output_bytes": 32768
+  },
+  "budgets": {
+    "model_requests": 30,
+    "tool_calls": 60,
+    "side_effects": 20,
+    "tool_output_bytes": 131072
+  }
+}
+

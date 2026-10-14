@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safe-coding-agent"
+version = "2.0.0"
+description = "Educational coding agent with tool calling, policy enforcement, recovery, budgets, tasks and rollback"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+coding-agent = "coding_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["coding_agent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
